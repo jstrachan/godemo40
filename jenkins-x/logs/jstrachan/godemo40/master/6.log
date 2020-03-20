@@ -1,0 +1,485 @@
+
+Showing logs for build [32mjstrachan-godemo40-master-btrgx-6[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-lw2ns[0m
+{"level":"warn","ts":1584723504.7382724,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584723504.738954,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mjstrachan-godemo40-master-btrgx-6[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-4k62c[0m
+{"level":"warn","ts":1584723505.402708,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1584723505.4039707,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mjstrachan-godemo40-master-btrgx-6[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mjstrachan-godemo40-master-btrgx-6[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-jstrachan-godemo40-master-btrgx-fdtwl[0m
+{"level":"warn","ts":1584723512.4879599,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584723513.5669508,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*********/godemo40.git @ v0.0.6 in path /workspace/source"}
+
+Showing logs for build [32mjstrachan-godemo40-master-btrgx-6[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mjstrachan-godemo40-master-btrgx-6[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mjstrachan-godemo40-master-btrgx-6[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/godemo40 main.go
+
+Showing logs for build [32mjstrachan-godemo40-master-btrgx-6[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+ERROR: logging before flag.Parse: E0320 16:58:46.658847      12 metadata.go:241] Failed to unmarshal scopes: invalid character 'h' looking for beginning of value
+[36mINFO[0m[0002] No base image, nothing to extract            
+[36mINFO[0m[0002] cmd: EXPOSE                                  
+[36mINFO[0m[0002] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0002] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0002] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0002] Taking snapshot of full filesystem...        
+[36mINFO[0m[0002] EXPOSE 8080                                  
+[36mINFO[0m[0002] cmd: EXPOSE                                  
+[36mINFO[0m[0002] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0002] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0002] ENTRYPOINT ["/godemo40"]                     
+[36mINFO[0m[0002] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0002] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0002] COPY ./bin/ /                                
+[36mINFO[0m[0002] Taking snapshot of files...                  
+2020/03/20 16:58:50 pushed blob: sha256:eb3cf72c5343c8500695d699bfbd30e2d9891f9ce5d5752129b0524514eb17cf
+2020/03/20 16:58:51 pushed blob: sha256:57e9afc271d49b9e950e50e25aef0c7f7639f29b5dca6bc372570639cddd5aeb
+2020/03/20 16:58:53 gcr.io/*********-multicluster/godemo40:0.0.6: digest: sha256:0cd9fd51e741501b028da1a2229125b0f8948efd27eccfd12b89ab993628345a size: 428
+
+Showing logs for build [32mjstrachan-godemo40-master-btrgx-6[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mjstrachan-godemo40-master-btrgx-6[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/godemo40 to an unshallow repository
+Generating change log from git ref 4bee14a1a69ec6aec8c4fd6af01fec4a160ac625 => 8a6b8ddb77d95d777b3da3d2ae38d64801e921ec
+WARNING: No release found for *********/godemo40 and tag v0.0.6 so creating a new release
+Updated the release information at https://github.com/*********/godemo40/releases/tag/v0.0.6
+generated: /workspace/source/charts/godemo40/templates/release.yaml
+Created Release godemo40-0-0-6 resource in namespace **
+Updating PipelineActivity *********-godemo40-master-6 with version 0.0.6
+Updated PipelineActivities *********-godemo40-master-6 with release notes URL: https://github.com/*********/godemo40/releases/tag/v0.0.6
+
+Showing logs for build [32mjstrachan-godemo40-master-btrgx-6[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: bucketrepo http://bucketrepo/bucketrepo/charts/
+Successfully added Helm repository bucketrepo.
+Uploading chart file godemo40-0.0.6.tgz to http://bucketrepo/bucketrepo/charts/api/charts
+Received 200 response: 
+
+Showing logs for build [32mjstrachan-godemo40-master-btrgx-6[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app godemo40 version 0.0.6 to namespace **-staging
+WARNING: 
+Created Pull Request: https://github.com/*********/environment-bucketrepo-staging/pull/38
+Added label updatebot to Pull Request https://github.com/*********/environment-bucketrepo-staging/pull/38
+WARNING: Failed to query the Pull Request last commit status for https://github.com/*********/environment-bucketrepo-staging/pull/38 ref 7b641913b66bbb63634554aba25a84b4222ac035 Could not find a status for repository *********/environment-bucketrepo-staging with ref 7b641913b66bbb63634554aba25a84b4222ac035
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/38
+Rebasing PullRequest due to conflict
+WARNING: 
+error: Timed out waiting for pull request https://github.com/*********/environment-bucketrepo-staging/pull/38 to merge. Waited 1h0m0s
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-promote-jx-promote'. The execution of the pipeline has stopped.[0m
