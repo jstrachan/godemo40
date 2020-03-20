@@ -1,0 +1,80 @@
+
+Showing logs for build [32mjstrachan-godemo40-master-x7fxc-3[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-zjn6j[0m
+{"level":"warn","ts":1584720448.9991148,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584720449.000057,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mjstrachan-godemo40-master-x7fxc-3[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-mhjhk[0m
+{"level":"warn","ts":1584720450.025952,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1584720450.0275683,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mjstrachan-godemo40-master-x7fxc-3[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mjstrachan-godemo40-master-x7fxc-3[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-jstrachan-godemo40-master-x7fxc-flg7m[0m
+{"level":"warn","ts":1584720457.2448905,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584720458.2970924,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*********/godemo40.git @ v0.0.3 in path /workspace/source"}
+
+Showing logs for build [32mjstrachan-godemo40-master-x7fxc-3[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mjstrachan-godemo40-master-x7fxc-3[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mjstrachan-godemo40-master-x7fxc-3[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/godemo40 main.go
+
+Showing logs for build [32mjstrachan-godemo40-master-x7fxc-3[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+ERROR: logging before flag.Parse: E0320 16:07:50.464769      11 metadata.go:241] Failed to unmarshal scopes: invalid character 'h' looking for beginning of value
+[36mINFO[0m[0001] No base image, nothing to extract            
+[36mINFO[0m[0001] cmd: EXPOSE                                  
+[36mINFO[0m[0001] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0001] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0001] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0001] Taking snapshot of full filesystem...        
+[36mINFO[0m[0001] EXPOSE 8080                                  
+[36mINFO[0m[0001] cmd: EXPOSE                                  
+[36mINFO[0m[0001] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0001] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0001] ENTRYPOINT ["/godemo40"]                     
+[36mINFO[0m[0001] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0001] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0001] COPY ./bin/ /                                
+[36mINFO[0m[0001] Taking snapshot of files...                  
+2020/03/20 16:07:54 pushed blob: sha256:f260ca274bf5021d8b1adf48dc345aecd3dbf3e81e53878521495394c27225e5
+2020/03/20 16:07:55 pushed blob: sha256:430f6c86fd4d2a9a471f7b2c474a5e0b39569a390c3159f289db332fd877550f
+2020/03/20 16:07:57 gcr.io/*********-multicluster/godemo40:0.0.3: digest: sha256:895d5622181a289db14b759fab65d32218da510d1cbe6b8ad03805f86663a6f0 size: 428
+
+Showing logs for build [32mjstrachan-godemo40-master-x7fxc-3[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mjstrachan-godemo40-master-x7fxc-3[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/godemo40 to an unshallow repository
+Generating change log from git ref 99e85443ed2bcdbeaf7922e1ca995fab22dd46b0 => 42d8a41ab83ecc195508eb35758d5ff544d1b0e8
+WARNING: No release found for *********/godemo40 and tag v0.0.3 so creating a new release
+Updated the release information at https://github.com/*********/godemo40/releases/tag/v0.0.3
+generated: /workspace/source/charts/godemo40/templates/release.yaml
+Created Release godemo40-0-0-3 resource in namespace **
+Updating PipelineActivity *********-godemo40-master-3 with version 0.0.3
+Updated PipelineActivities *********-godemo40-master-3 with release notes URL: https://github.com/*********/godemo40/releases/tag/v0.0.3
+
+Showing logs for build [32mjstrachan-godemo40-master-x7fxc-3[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: bucketrepo http://bucketrepo/bucketrepo/charts/
+Successfully added Helm repository bucketrepo.
+Uploading chart file godemo40-0.0.3.tgz to http://bucketrepo/bucketrepo/charts/api/charts
+Received 200 response: 
+
+Showing logs for build [32mjstrachan-godemo40-master-x7fxc-3[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app godemo40 version 0.0.3 to namespace **-staging
+WARNING: 
+Created Pull Request: https://github.com/*********/environment-bucketrepo-staging/pull/35
+Added label updatebot to Pull Request https://github.com/*********/environment-bucketrepo-staging/pull/35
+WARNING: Failed to query the Pull Request last commit status for https://github.com/*********/environment-bucketrepo-staging/pull/35 ref 3e49ced07427417ddcb2353f75e75a501dad02b3 Could not find a status for repository *********/environment-bucketrepo-staging with ref 3e49ced07427417ddcb2353f75e75a501dad02b3
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/35
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/35
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/35
+Pull Request https://github.com/*********/environment-bucketrepo-staging/pull/35 is merged at sha 195ce56aeb7d909fcc387eb6c08795d1667ba77c
+Pull Request merged but we are not waiting for the update pipeline to complete!
