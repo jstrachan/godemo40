@@ -32,9 +32,9 @@ spec:
     maxWeight: {{ .Values.canary.analysis.maxWeight }}
     stepWeight: {{ .Values.canary.analysis.stepWeight }}
     metrics:
-    - name: latency-bad
+    - name: latency
       templateRef:
-        name: latency-bad
+        name: latency
         namespace: istio-system
       thresholdRange:
         max: {{ .Values.canary.analysis.metrics.latency.threshold }}
