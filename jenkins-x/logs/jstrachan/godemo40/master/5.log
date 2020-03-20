@@ -1,0 +1,85 @@
+
+Showing logs for build [32mjstrachan-godemo40-master-r744k-5[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-t6rb2[0m
+{"level":"warn","ts":1584722643.5694513,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584722643.5701792,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mjstrachan-godemo40-master-r744k-5[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-4rjnx[0m
+{"level":"warn","ts":1584722644.5330992,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1584722644.534081,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mjstrachan-godemo40-master-r744k-5[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mjstrachan-godemo40-master-r744k-5[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-jstrachan-godemo40-master-r744k-rxvzj[0m
+{"level":"warn","ts":1584722651.7909753,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584722652.8352854,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*********/godemo40.git @ v0.0.5 in path /workspace/source"}
+
+Showing logs for build [32mjstrachan-godemo40-master-r744k-5[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:6a92c316cf02d704b5c412471d084d347ef9c891
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mjstrachan-godemo40-master-r744k-5[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mjstrachan-godemo40-master-r744k-5[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/godemo40 main.go
+
+Showing logs for build [32mjstrachan-godemo40-master-r744k-5[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+ERROR: logging before flag.Parse: E0320 16:44:25.066158      13 metadata.go:241] Failed to unmarshal scopes: invalid character 'h' looking for beginning of value
+[36mINFO[0m[0001] No base image, nothing to extract            
+[36mINFO[0m[0001] cmd: EXPOSE                                  
+[36mINFO[0m[0001] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0001] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0001] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0001] Taking snapshot of full filesystem...        
+[36mINFO[0m[0001] EXPOSE 8080                                  
+[36mINFO[0m[0001] cmd: EXPOSE                                  
+[36mINFO[0m[0001] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0001] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0001] ENTRYPOINT ["/godemo40"]                     
+[36mINFO[0m[0001] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0001] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0001] COPY ./bin/ /                                
+[36mINFO[0m[0001] Taking snapshot of files...                  
+2020/03/20 16:44:29 pushed blob: sha256:b84f0e3a7b1f479a512cda52ac2a2973b2a2acab9b1091302c92fb0cfb9a631b
+2020/03/20 16:44:30 pushed blob: sha256:f6e157b9d5e593659b144de225973b2d0d82ec0be89142fc56f6eb55abac2fd1
+2020/03/20 16:44:31 gcr.io/*********-multicluster/godemo40:0.0.5: digest: sha256:de05280f7ddfd9612d82fc170f178dc6722a954d65a5ca3ac5a325479b258da9 size: 428
+
+Showing logs for build [32mjstrachan-godemo40-master-r744k-5[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mjstrachan-godemo40-master-r744k-5[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/godemo40 to an unshallow repository
+Generating change log from git ref b1ace773f778cec75951a549504cb9998c5bb4b0 => 4bee14a1a69ec6aec8c4fd6af01fec4a160ac625
+Associating user x-0 in users.jenkins.io with email james.strachan@gmail.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit 6a92c316cf02d704b5c412471d084d347ef9c891 with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+WARNING: Failed to enrich commit 6a92c316cf02d704b5c412471d084d347ef9c891 with issues: users.jenkins.io "x-0" already exists
+Finding issues in commit messages using git format
+WARNING: No release found for *********/godemo40 and tag v0.0.5 so creating a new release
+Updated the release information at https://github.com/*********/godemo40/releases/tag/v0.0.5
+generated: /workspace/source/charts/godemo40/templates/release.yaml
+Created Release godemo40-0-0-5 resource in namespace **
+Updating PipelineActivity *********-godemo40-master-5 with version 0.0.5
+Updated PipelineActivities *********-godemo40-master-5 with release notes URL: https://github.com/*********/godemo40/releases/tag/v0.0.5
+
+Showing logs for build [32mjstrachan-godemo40-master-r744k-5[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: bucketrepo http://bucketrepo/bucketrepo/charts/
+Successfully added Helm repository bucketrepo.
+Uploading chart file godemo40-0.0.5.tgz to http://bucketrepo/bucketrepo/charts/api/charts
+Received 200 response: 
+
+Showing logs for build [32mjstrachan-godemo40-master-r744k-5[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app godemo40 version 0.0.5 to namespace **-staging
+WARNING: 
+Created Pull Request: https://github.com/*********/environment-bucketrepo-staging/pull/37
+Added label updatebot to Pull Request https://github.com/*********/environment-bucketrepo-staging/pull/37
+WARNING: Failed to query the Pull Request last commit status for https://github.com/*********/environment-bucketrepo-staging/pull/37 ref 336d6019c8354ba8f6459ed4e34324b87adbd1a7 Could not find a status for repository *********/environment-bucketrepo-staging with ref 336d6019c8354ba8f6459ed4e34324b87adbd1a7
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/37
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/37
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/37
+Pull Request https://github.com/*********/environment-bucketrepo-staging/pull/37 is merged at sha 3509ad3ebfd714fa0f6764e6d9780cdf7d82d694
+Pull Request merged but we are not waiting for the update pipeline to complete!
