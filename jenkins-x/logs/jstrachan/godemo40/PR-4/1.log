@@ -1,0 +1,92 @@
+
+Showing logs for build [32mjstrachan-godemo40-pr-4-pr-buil-f7lpk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-c2lrk[0m
+{"level":"warn","ts":1584973444.0053463,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584973444.0062063,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mjstrachan-godemo40-pr-4-pr-buil-f7lpk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-mnrbv[0m
+{"level":"warn","ts":1584973445.3218334,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1584973445.3235853,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mjstrachan-godemo40-pr-4-pr-buil-f7lpk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mjstrachan-godemo40-pr-4-pr-buil-f7lpk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-jstrachan-godemo40-pr-4-pr-buil-f7lpk-xw495[0m
+{"level":"warn","ts":1584973451.4255617,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584973452.4945138,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*********/godemo40.git @ master in path /workspace/source"}
+
+Showing logs for build [32mjstrachan-godemo40-pr-4-pr-buil-f7lpk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:9ed4f4fd9d1fd973583e25dba39620cff8f1262e,4:f2e363327af1d93afc92fcc6541aac6e651c4079
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow f2e363327af1d93afc92fcc6541aac6e651c4079: 9ed4f4fd9d1fd973583e25dba39620cff8f1262e:
+DEBUG: ran git fetch --unshallow origin f2e363327af1d93afc92fcc6541aac6e651c4079: 9ed4f4fd9d1fd973583e25dba39620cff8f1262e: in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git reset --hard 9ed4f4fd9d1fd973583e25dba39620cff8f1262e
+DEBUG: ran git reset --hard 9ed4f4fd9d1fd973583e25dba39620cff8f1262e in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge f2e363327af1d93afc92fcc6541aac6e651c4079
+DEBUG: ran git merge f2e363327af1d93afc92fcc6541aac6e651c4079 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e 9ed4f4fd9d1fd973583e25dba39620cff8f1262e..HEAD
+Merged SHA f2e363327af1d93afc92fcc6541aac6e651c4079 with commit message 'Update main.go' into base branch master
+
+Showing logs for build [32mjstrachan-godemo40-pr-4-pr-buil-f7lpk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-linux[0m
+CGO_ENABLED=0 GOOS=linux GOARCH=amd64 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/godemo40 main.go
+
+Showing logs for build [32mjstrachan-godemo40-pr-4-pr-buil-f7lpk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+ERROR: logging before flag.Parse: E0323 14:24:21.165283      12 metadata.go:241] Failed to unmarshal scopes: invalid character 'h' looking for beginning of value
+[36mINFO[0m[0000] No base image, nothing to extract            
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0000] Taking snapshot of full filesystem...        
+[36mINFO[0m[0000] EXPOSE 8080                                  
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] ENTRYPOINT ["/godemo40"]                     
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] COPY ./bin/ /                                
+[36mINFO[0m[0000] Taking snapshot of files...                  
+2020/03/23 14:24:25 pushed blob: sha256:a4da40192e093ec638ed7b79077892c05278e1185f8f2cab3ac15f633081ab01
+2020/03/23 14:24:25 pushed blob: sha256:54ec7273b707d10487ee79fc1573d282c15b9989ce803b0a602715859432f31e
+2020/03/23 14:24:27 gcr.io/*********-multicluster/godemo40:0.0.0-SNAPSHOT-PR-4-1: digest: sha256:5b82157ae1e59392db84d960849a30c837c1a90e62fc90796b6edd682bd26ff9 size: 428
+
+Showing logs for build [32mjstrachan-godemo40-pr-4-pr-buil-f7lpk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-postbuild-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mjstrachan-godemo40-pr-4-pr-buil-f7lpk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-make-preview[0m
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-4-1/" Chart.yaml
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-4-1/" ../*/Chart.yaml
+sed -i -e "s|repository:.*|repository: gcr.io\/*********-multicluster\/godemo40|" values.yaml
+sed -i -e "s/tag:.*/tag: 0.0.0-SNAPSHOT-PR-4-1/" values.yaml
+echo "  version: 0.0.0-SNAPSHOT-PR-4-1" >> requirements.yaml
+** step helm build
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: bucketrepo http://bucketrepo/bucketrepo/charts/
+Successfully added Helm repository bucketrepo.
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+
+Showing logs for build [32mjstrachan-godemo40-pr-4-pr-buil-f7lpk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-preview[0m
+Creating a preview
+Found commit author match for: ********* with email address: james.strachan@gmail.com
+Created environment *********-godemo40-pr-4
+Namespace **-*********-godemo40-pr-4 created 
+expose:
+  Annotations:
+    helm.sh/hook: post-install,post-upgrade
+    helm.sh/hook-delete-policy: hook-succeeded
+  config:
+    domain: 35.240.16.53.nip.io
+    exposer: Ingress
+    http: "true"
+preview:
+  image:
+    repository: gcr.io/*********-multicluster/godemo40
+    tag: 0.0.0-SNAPSHOT-PR-4-1
+error: failed to run 'helm upgrade --namespace **-*********-godemo40-pr-4 --install --wait --force --timeout 6000 --set tags.**-ns-**-*********-godemo40-pr-4=true --set global.**NsJxJstrachanGodemo40Pr4=true --set tags.**-preview=true --set tags.**-env-*********-godemo40-pr-4=true --set global.**Preview=true --set global.**EnvJstrachanGodemo40Pr4=true --set-string global.**Ns=**-*********-godemo40-pr-4 --set-string global.**TypeEnv=preview --set-string global.**Env=*********-godemo40-pr-4 --set-string global.**PreviewApp=godemo40 --set-string global.**PreviewPr=4 --values /tmp/values.yaml437498893 --values /tmp/values.yaml808369672 preview .' command in directory '', output: 'Error: invalid argument "6000" for "--timeout" flag: time: missing unit in duration 6000'
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-promote-jx-preview'. The execution of the pipeline has stopped.[0m
